@@ -1,14 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-import million from "million/compiler"
-import "./env.mjs"
-import withNextIntl from "next-intl/plugin"
+import million from "million/compiler";
+import "./env.mjs";
+import withNextIntl from "next-intl/plugin";
 
-const i18nConfig = "./src/i18n/i18n.ts"
+const i18nConfig = "./src/i18n/i18n.ts";
 
-const millionConfig = {
-  auto: { rsc: true },
-}
+const millionConfig = { auto: { rsc: true } };
 
 const nextConfig = {
   reactStrictMode: true,
@@ -32,20 +30,21 @@ const nextConfig = {
     optimizeServerReact: true,
   },
   images: {
-    domains: [
-      "images.clerk.com",
-      "www.gravatar.com",
-      "googleusercontent.com",
-      "pbxt.replicate.delivery",
-      "oaidalleapiprodscus.blob.core.windows.net",
-      "cdn.openai.com",
+    remotePatterns: [
+      {
+        hostname: "images.clerk.com",
+        hostname: "www.gravatar.com",
+        hostname: "googleusercontent.com",
+        hostname: "pbxt.replicate.delivery",
+        hostname: "oaidalleapiprodscus.blob.core.windows.net",
+        hostname: "cdn.openai.com",
+      },
     ],
   },
   transpilePackages: ["react-tweet"],
-}
+};
 
-const combinedMillionConfig = million.next(nextConfig, millionConfig)
+const combinedMillionConfig = million.next(nextConfig, millionConfig);
+const combinedIntlConfig = withNextIntl(i18nConfig)(combinedMillionConfig);
 
-const combinedIntlConfig = withNextIntl(i18nConfig)(combinedMillionConfig)
-
-export default combinedIntlConfig
+export default combinedIntlConfig;

@@ -1,0 +1,33 @@
+{
+  "landingNavbar": {
+    "dashboard": "Tableau de bord",
+    "getStarted": "Commencer",
+    "applicationName": "ShipInDays.cc"
+  },
+  "metadata": {
+    "applicationName": "ShipInDays.cc",
+    "applicationDescription": "Lancez votre startup en quelques jours, et non en semaines, en 27 langues avec PayPal ou Stripe, authentification via Clerk ou NextAuth, support client, formulaires, listes d'attente, Mailgun, et plus encore",
+    "keywords-0": "modèle SaaS",
+    "keywords-1": "internationalisation de SaaS",
+    "keywords-2": "internationalisation de NextJS",
+    "keywords-3": "internationalisation de React",
+    "keywords-4": "authentification utilisateur SaaSx",
+    "keywords-5": "outils de support client SaaS",
+    "keywords-6": "gestion de formulaires pour SaaS",
+    "keywords-7": "gestion des listes d'attente clients",
+    "keywords-8": "marketing par courriel pour startups",
+    "keywords-9": "solutions d'escalade pour startups",
+    "keywords-10": "logiciel comme service"
+  },
+  "hero": {
+    "heading": "Lancez votre startup en 27 langues",
+    "feature-1": "Lancez en quelques jours et non en semaines",
+    "feature-2": "Paiements via PayPal ou Stripe intégrés",
+    "feature-3": "Authentification avec NextAuth ou Clerk",
+    "feature-4": "Emails, Formulaires, Listes d'attente, Blogs",
+    "feature-5": "Support client, SEO, et plus",
+    "heroUpperButtonText": "Le seul modèle NextJS internationalisé pour lancer rapidement dans tous les pays et langues",
+    "heroButtonText": "Obtenez ShipInDays maintenant",
+    "heroLowerButtonText": "Internationalisé en 27 langues, triplez vos profits en exportant à l'international"
+  }
+}

@@ -1,23 +1,17 @@
-import BackgroundProvider from "@/components/background-provider"
-import Banner from "@/components/banner"
-import { SiteFooter } from "@/components/site-footer"
+import BackgroundProvider from "@/components/background-provider";
+import { SiteFooter } from "@/components/site-footer";
 
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <Banner />
-      {/* <SiteHeader user={user} /> */}
-      {/* <main className="h-full bg-background overflow-auto">
-        <div className="mx-auto max-w-screen-xl h-full w-full">{children}</div>
-      </main> */}
       <BackgroundProvider />
       <main className="flex-1 container">{children}</main>
       <SiteFooter />
     </>
-  )
-}
+  );
+};
 
-export default LandingLayout
+export default LandingLayout;
 
 // import Banner from "@/components/landing/banner"
 // import GridPattern from "@/components/magicui/grid-pattern"

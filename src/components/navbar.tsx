@@ -1,20 +1,20 @@
-import { UserButton } from "@clerk/nextjs"
+import { UserButton } from "@clerk/nextjs";
 
-import { MobileSidebar } from "@/components/mobile-sidebar"
-import { getApiLimitCount } from "@/lib/api-limit"
-import { checkSubscription } from "@/lib/subscription"
-import { ThemeToggle } from "./theme-toggle"
-import { loadFullApplications } from "@/lib/applications"
-import { LanguageSwitcher } from "./language-switcher"
-import { defaultLocale } from "@/i18n/locales"
+import { MobileSidebar } from "@/components/mobile-sidebar";
+import { getApiLimitCount } from "@/lib/api-limit";
+import { checkSubscription } from "@/lib/subscription";
+import { ThemeToggle } from "./theme-toggle";
+import { loadFullApplications } from "@/lib/applications";
+import { LanguageSwitcher } from "./language-switcher";
+import { defaultLocale } from "../../locales/locales";
 
 type NavbarProps = {
-  locale: string
-}
+  locale: string;
+};
 const Navbar = async ({ locale }: NavbarProps) => {
-  const apiLimitCount = await getApiLimitCount()
-  const isPro = await checkSubscription()
-  const applications = await loadFullApplications()
+  const apiLimitCount = await getApiLimitCount();
+  const isPro = await checkSubscription();
+  const applications = await loadFullApplications();
 
   return (
     <div className="flex items-center p-4">
@@ -33,7 +33,7 @@ const Navbar = async ({ locale }: NavbarProps) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

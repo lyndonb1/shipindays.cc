@@ -1,0 +1,36 @@
+{
+  "landingNavbar": {
+    "dashboard": "Dashboard",
+    "getStarted": "Get Started",
+    "applicationName": "ShipInDays.cc"
+  },
+  "metadata": {
+    "applicationName": "ShipInDays.cc",
+    "applicationDescription": "Ship your startup in days, not weeks in 27 languages with PayPal or Stripe, Authentication through Clerk or NextAuth, Customer Support, forms, waitlists, Mailgun, and more",
+    "keywords-0": "saas boilerplate",
+    "keywords-1": "saas internationlization",
+    "keywords-2": "nextjs internationlization",
+    "keywords-3": "react internationlization",
+    "keywords-4": "user authentication SaaSx",
+    "keywords-5": "SaaS customer support tools",
+    "keywords-6": "forms management for SaaS",
+    "keywords-7": "customer waitlists management",
+    "keywords-8": "email marketing for startups",
+    "keywords-9": "startup scaling solutions",
+    "keywords-10": "software as a service"
+  },
+  "hero": {
+    "heading": "Ship your startup in 27 languages, Ship in days not weeks",
+    "feature-1": "PayPal or Stripe payments built in",
+    "feature-2": "Authentication with NextAuth or Clerk",
+    "feature-3": "Email, Forms, Waitlists, Blogs",
+    "feature-4": "Customer Support, SEO, and more",
+    "heroUpperButtonText": "The only NextJS internationalized boilerplate built to easily ship to all countries & languages fast",
+    "heroButtonText": "Get ShipInDays Now",
+    "heroLowerButtonText": "3X your startup profits by shipping internationally"
+  },
+  "testimonialHighlight": {
+    "question": "What people are saying?",
+    "quote": " is awesome to build AI micro saas and leverage Next 14"
+  }
+}

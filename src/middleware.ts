@@ -1,12 +1,12 @@
-import { authMiddleware, redirectToSignIn } from "@clerk/nextjs"
-import createMiddleware from "next-intl/middleware"
-import { defaultLocale, locales } from "./i18n/locales"
+import { authMiddleware, redirectToSignIn } from "@clerk/nextjs";
+import createMiddleware from "next-intl/middleware";
+import { defaultLocale, locales } from "../locales/locales";
 
 const intlMiddleware = createMiddleware({
   locales,
   defaultLocale,
   localeDetection: false,
-})
+});
 
 export default authMiddleware({
   beforeAuth: (req) =>
@@ -26,22 +26,27 @@ export default authMiddleware({
   afterAuth: (auth, req, evt) => {
     // handle users who aren't authenticated
     if (!auth.userId && !auth.isPublicRoute) {
-      return redirectToSignIn({ returnBackUrl: req.url })
+      return redirectToSignIn({ returnBackUrl: req.url });
     }
 
-    return intlMiddleware(req)
+    return intlMiddleware(req);
   },
-})
+});
 
 export const config = {
-  /*
-   * Matcher: This is a regular expression-based matcher that filters request paths.
-   * It matches all request paths except for the ones:
-   * - Containing a dot (.) in it (typically used to exclude file paths like .js, .css, .png, etc.)
-   * - Starting with "_next" (Next.js internal paths)
-   * - Starting with "api" or "trpc" (API routes)
-   *
-   * The matcher is used in an array with three regular expression patterns:
-   */
+  // Add a custom matcher to ensure that the locale is correctly detected
+  // for all routes
+  // This matcher will match all routes that do not contain a file extension
+  // or the _next directory
+  // It will also match all routes that start with /api or /trpc
+  // This ensures that the locale is correctly detected for all routes
+  // in the application
+  // For more information on matchers, see:
+  // https://nextjs.org/docs/api-reference/next.config.js/rewrites
+  // https://nextjs.org/docs/api-reference/next.config.js/redirects
+  // https://nextjs.org/docs/api-reference/next.config.js/headers
+  // https://nextjs.org/docs/api-reference/next.config.js/custom-rewrites
+  // https://nextjs.org/docs/api-reference/next.config.js/custom-routes
+  // https://nextjs.org/docs/api-reference/next.config.js/rewrites-redirects
   matcher: ["/((?!.*\\..*|_next).*)", "/", "/(api|trpc)(.*)"],
-}
+};

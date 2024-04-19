@@ -1,12 +1,11 @@
-import { LandingNavbar } from "@/components/landing/landing-navbar"
-import { Hero } from "@/components/landing/hero/hero"
-import Testimonials from "@/components/landing/testimonials/testimonials"
-import TestimonialHighlight from "@/components/landing/testimonials/testimonial-highlight"
-import { Examples } from "@/components/landing/examples/examples"
-import FeatureSections from "@/components/landing/features/column/feature-sections"
-import { OpenSource } from "@/components/landing/open-source"
-import { Technologies } from "@/components/landing/partners/technologies"
-import { Suspense } from "react"
+import { LandingNavbar } from "@/components/landing/landing-navbar";
+import { Hero } from "@/components/landing/hero/hero";
+import Testimonials from "@/components/landing/testimonials/testimonials";
+import TestimonialHighlight from "@/components/landing/testimonials/testimonial-highlight";
+import { Examples } from "@/components/landing/examples/examples";
+import { Technologies } from "@/components/landing/partners/technologies";
+import { Suspense } from "react";
+import { TestimonialsAlt } from "@/components/landing/testimonials/testimonials-alt";
 
 const LandingPage = () => {
   // const user = await getCurrentUser()
@@ -17,21 +16,19 @@ const LandingPage = () => {
       <Hero />
       <Technologies />
       <TestimonialHighlight />
-      <FeatureSections />
       <Examples />
       <Suspense>
         <Testimonials />
       </Suspense>
-      <OpenSource />
-      {/* END OF LANDING PAGE */}
-      {/* <TestimonialsAlt />
-      <HeroSecondary />
+
+      <TestimonialsAlt />
+      {/* 
       <TrustedBy />
-      <Community />
-      <HeroAlt />
+      <Pricing />
+      <FAQ />
       <Features /> */}
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

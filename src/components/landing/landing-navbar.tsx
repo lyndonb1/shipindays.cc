@@ -1,22 +1,23 @@
-"use client"
-import { Montserrat } from "next/font/google"
-import Image from "next/image"
-import Link from "next-intl/link"
-import { useAuth } from "@clerk/nextjs"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "../theme-toggle"
-import { siteConfig } from "@/config/site"
-import { LanguageSwitcher } from "../language-switcher"
-import { defaultLocale } from "@/i18n/locales"
-import { useLocale } from "next-intl"
+import { Montserrat } from "next/font/google";
+import Image from "next/image";
+import Link from "next-intl/link";
+import { useAuth } from "@clerk/nextjs";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "../theme-toggle";
+import { LanguageSwitcher } from "../language-switcher";
+import { defaultLocale } from "../../../locales/locales";
+import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
-const font = Montserrat({ weight: "600", subsets: ["latin"] })
+const font = Montserrat({ weight: "600", subsets: ["latin"] });
 
 export const LandingNavbar = () => {
-  const { isSignedIn } = useAuth()
-  const locale = useLocale()
+  const { isSignedIn } = useAuth();
+  const locale = useLocale();
+  const t = useTranslations("landingNavbar");
 
   return (
     <nav className="p-4 bg-transparent flex items-center justify-between">
@@ -25,7 +26,7 @@ export const LandingNavbar = () => {
           <Image fill alt="Logo" src="/logo.png" />
         </div>
         <h1 className={cn("text-2xl font-bold text-primary", font.className)}>
-          {siteConfig.name}
+          {t("applicationName")}
         </h1>
       </Link>
       <div className="flex items-center gap-x-2">
@@ -37,10 +38,10 @@ export const LandingNavbar = () => {
           }`}
         >
           <Button variant="default" className="rounded-full">
-            {isSignedIn ? "Dashboard" : "Get Started"}
+            {isSignedIn ? t("dashboard") : t("getStarted")}
           </Button>
         </Link>
       </div>
     </nav>
-  )
-}
+  );
+};

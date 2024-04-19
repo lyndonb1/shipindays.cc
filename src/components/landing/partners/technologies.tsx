@@ -1,7 +1,7 @@
 type Tool = {
-  name: string
-  icon: React.ReactNode
-}
+  name: string;
+  icon: React.ReactNode;
+};
 
 const tools: Tool[] = [
   {
@@ -70,17 +70,13 @@ const tools: Tool[] = [
       </svg>
     ),
   },
-]
+];
 
 export const Technologies = () => {
   return (
     <section className="container max-w-[1400px] pb-12 md:pb-16 lg:pb-24 mx-auto">
       <div className="w-full flex flex-col items-center text-center gap-8">
-        <div className="text-center">
-          <p className="text-muted-foreground text-base sm:text-lg">
-            This project was built using the following technologies
-          </p>
-        </div>
+        <div className="text-center"></div>
 
         <div className="w-full max-w-4xl mx-auto flex justify-center items-center flex-wrap gap-6 sm:gap-12 place-items-center">
           {tools.map((tool, index) => (
@@ -94,5 +90,5 @@ export const Technologies = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
